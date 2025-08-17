@@ -1,0 +1,8 @@
+sudo mysql --local-infile=1 -uroot -pRoot123$
+
+create table youtube_videos(video_id varchar(255),title varchar(255),channel varchar(255),country varchar(255),views int,likes int,comments int,published_at timestamp,fetch_date timestamp);
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'Root123$';
+
+load data local infile '/home/iamsy/Project/dataset/youtube_videos.csv' into table youtube_videos fields terminated by ',' enclosed by '"' lines terminated by '\n' ignore 1 rows;
+
